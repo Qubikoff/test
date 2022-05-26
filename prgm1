@@ -1,0 +1,13 @@
+import numpy as np
+import random
+from sklearn.metrics.pairwise import euclidean_distances
+
+# N - количество строк, пусть будет равным 501
+# m - количество цифр в строке, пусть будет равным 20
+N = 11
+m = 600
+a = np.random.uniform(-1, 1, (m, N))
+np.savetxt('vectors.csv', a, delimiter=",")
+
+print("Матрица:")
+print(a)

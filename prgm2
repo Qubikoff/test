@@ -1,0 +1,22 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics.pairwise import euclidean_distances
+import pandas as pd
+
+b = flights = pd.read_csv('vectors.csv')
+D = euclidean_distances(b, b)
+#X = scipy.spatial.distance.cdist(b, b, metric='euclidean', p=2, )
+print("Все расстояния:", " ")
+print(D)
+#print (X)
+print ("Максимальное расстояние:",np.max(D))
+print ("Минимальное расстояние:",np.min(D))
+print ("Номера векторов пары с максимальным расстоянием :", np.argmax(D))
+print ("Номера векторов пары с минимальным расстоянием :", np.argmin(D))
+print(len(D))
+
+#plt.hist(D,edgecolor="blue", bins =10)
+#plt.title("Гистограмма распределения")
+#plt.xlabel("Значение расстояния")
+#plt.ylabel("Количество вхождений")
+#plt.show()
